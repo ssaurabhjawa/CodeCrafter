@@ -150,7 +150,7 @@ Finally, JavaScript has an interesting feature called the event loop, which allo
 
 ![event loop](https://i.ibb.co/MBwPZXb/Event-Loop-browser-V8.png)
 
-```setTimeOut()
+```setTimeOut()```
 A promise is an essential concept in JavaScript that provides a way to handle asynchronous operations. In simple terms, a promise is a wrapper for a value that is currently unknown but will resolve to a value in the future. For instance, a promise can be used to make a call to a third-party API that will eventually return some data. If something goes wrong in this process, the promise can reject and raise an error.
 
 To handle these two possible outcomes, the consumer of the promise can use methods like then() and catch(). Alternatively, an async function can be defined to automatically return a promise. The body of the function can then use the await keyword to pause its execution and wait for other promises to resolve. This results in readable code that is easier to understand.

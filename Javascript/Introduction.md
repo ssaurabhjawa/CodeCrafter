@@ -25,16 +25,6 @@ const name
 ```
 ## Lexical Environment
 The reason we have so many different ways to define variables has to do with the lexical environment, which determines where variables work and where they don't. There's a global scope, which is where we are right now, which means this variable will be available everywhere. However, if we define a variable inside a function, it then becomes local<br />
-
-In JavaScript, the concept of scope determines where variables can be accessed and used. There are two main types of scope: global and local. The global scope is where we are right now, and any variable defined in the global scope is accessible everywhere in the program.
-<br />
-However, if we define a variable inside a function, it becomes local to that function and cannot be accessed outside of it. If we have a statement like an if condition, variables can be scoped inside the braces or block, unless we use the VAR keyword for that variable. If VAR is used, the variable is hoisted up into the local scope for that function, which can lead to weirdness in the program.
-<br />
-## Functions
-Functions are one of the main building blocks in JavaScript. They work by taking an input or argument, then optionally returning a value that can be used somewhere else. **Functions are just objects**, which means they can also be used as expressions, allowing them to be used as variables or to construct higher-order functions where a function is used as an argument or a return value.
-
-Functions can also be nested to create a closure that encapsulates data and logic from the rest of the program. Normally, when you call a function that has a variable with a primitive value, it's stored on the call stack, which is the browser's short-term memory. However, when you create a closure, the inner function can still access variables in the outer function even after the initial function call. That's because JavaScript automatically stores the data in the outer function in the Heap memory, which persists between function calls.
-
 ```
 let a = 'global'; // Global Scope
 
@@ -49,19 +39,97 @@ function fun(){
 
 ![Alt text](https://res.cloudinary.com/practicaldev/image/fetch/s--Y1v6aJBu--/c_imagga_scale,f_auto,fl_progressive,h_900,q_auto,w_1600/https://thepracticaldev.s3.amazonaws.com/i/ek7ji4zrimozpp2yzk0a.png)
 
-As a developer, you'll rarely have to think about Heap memory, but you're more likely to run into the issue of variable scoping, which can cause errors in your code. So, it's important to understand the different types of scope and how to use them properly in your code.
+In JavaScript, the concept of scope determines where variables can be accessed and used. There are two main types of scope: global and local. The global scope is where we are right now, and any variable defined in the global scope is accessible everywhere in the program.
+<br />
+However, if we define a variable inside a function, it becomes local to that function and cannot be accessed outside of it. If we have a statement like an if condition, variables can be scoped inside the braces or block, unless we use the VAR keyword for that variable. If VAR is used, the variable is hoisted up into the local scope for that function, which can lead to weirdness in the program.
+<br />
+When it comes to scoping, JavaScript has global and local scopes. Variables declared outside of a function have global scope, which means they're available everywhere in your code. However, if you define a variable inside a function, it becomes local to that function and cannot be used outside of it. Variables can also be scoped inside if conditions or blocks unless you use the var keyword, which hoists the variable up into the local scope for that function.<br />
+
+## Functions
+Functions are one of the main building blocks in JavaScript. They work by taking an input or argument, then optionally returning a value that can be used somewhere else. **Functions are just objects**, which means they can also be used as expressions, allowing them to be used as variables or to construct higher-order functions where a function is used as an argument or a return value.
+```
+function add(a,b){
+    return a+b;
+}
+
+const add = function(a,b){
+    return a+b;
+}
+
+function higherOrder(fun) {
+    fun();
+    return function(){
+
+    }
+}
+```
+
+Functions can also be nested to create a closure that encapsulates data and logic from the rest of the program. Normally, when you call a function that has a variable with a primitive value, it's stored on the call stack, which is the browser's short-term memory. **However, when you create a closure**, the inner function can still access variables in the outer function even after the initial function call. That's because JavaScript automatically stores the data in the outer function in the **Heap memory**, which persists between function calls.
+```
+function giveMeClosure(){
+    let a = 10;
+    return function () {
+        a++;
+        return a;
+    }
+}
+
+```
+
+## Closures
+
+Now let's talk about closures. A closure is created when a function is defined inside another function, and the inner function has access to the outer function's variables. The inner function "closes over" the outer function's variables and retains access to them even after the outer function has completed execution.
+
+```
+function makeCounter() {
+  let count = 0;
+  return function() {
+    count++;
+    console.log(count);
+  }
+}
+
+let counter = makeCounter();
+counter(); // Output: 1
+counter(); // Output: 2
+```
+In this example, makeCounter creates a closure by returning a function that has access to the count variable. When we call makeCounter, it initializes count to 0 and returns a function that increments count and logs its value to the console. We then assign this returned function to the counter variable, which becomes a closure that has access to count. When we call counter, it increments and logs the value of count. Since counter is a closure, it retains access to count and can continue to increment it each time it's called. <br />
+
+## This
+Finally, I want to briefly touch on the this keyword. this is a special keyword in JavaScript that references an object.<br />
+
+Firstly, let's discuss arrow functions. Arrow functions do not have their own this value and they are always anonymous, which makes them ideal for function expressions. This means that when you use an arrow function, it does not create a new this value but instead inherits it from its parent scope. This can be useful in certain situations, and it makes arrow functions quite powerful.
+
+``` 
+function wtIsThis(){
+    console.log(this)
+}
+
+function person = {
+    wtIsThis: ()=>{
+        console.log(this);
+    }
+}
+
+Moving on to function arguments, it's important to note that when passing arguments, a primitive value like a number is passed by value. This means that a copy is created of the original variable. However, if the argument is an object, it's stored in the Heap and it's passed by reference. This means that multiple parts of the code might be mutating the same object. It's important to keep this in mind when working with objects in JavaScript.<br />
+```
+const num = 23;
+const obj = new Object();
+
+someFun(num, obj);
+```
+
+Speaking of which, let's dive into objects. The easiest way to define an object is with the object literal syntax using braces. However, there's also an object type that can be created with a constructor using the new keyword. An object contains a collection of properties, each of which has a name and a value. These values can be anything from primitive data types to other objects or even functions.
+
+
+
 
 Let's start with data types. JavaScript has several primitive data types, including numbers, strings, booleans, null, undefined, and symbols. It also has a non-primitive data type called objects. Variables in JavaScript are dynamically typed, which means you don't have to declare the type of a variable before using it. Instead, the type of a variable is inferred based on the value assigned to it.<br />
 ```
 
 ```
 
-When it comes to scoping, JavaScript has global and local scopes. Variables declared outside of a function have global scope, which means they're available everywhere in your code. However, if you define a variable inside a function, it becomes local to that function and cannot be used outside of it. Variables can also be scoped inside if conditions or blocks unless you use the var keyword, which hoists the variable up into the local scope for that function.<br />
-```
 
-
-```
-Functions are one of the main building blocks in JavaScript. They work by taking an input or argument, then optionally return a value that can be used somewhere else. Functions can be defined using the function keyword or the arrow syntax for function expressions. They can also be nested to create a closure that encapsulates data and logic from the rest of the program.
 ```
 
 

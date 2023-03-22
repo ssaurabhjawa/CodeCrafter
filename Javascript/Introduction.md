@@ -121,10 +121,25 @@ someFun(num, obj);
 
 Speaking of which, let's dive into objects. The easiest way to define an object is with the object literal syntax using braces. However, there's also an object type that can be created with a constructor using the new keyword. An object contains a collection of properties, each of which has a name and a value. These values can be anything from primitive data types to other objects or even functions.
 
+const human = {
+    dna: 'AACTG',
+    name: 'Jeff',
+    born: Date.now(),
+    walk(){
+        console.log('walking)
+    }
+}
 
 
 
-Let's start with data types. JavaScript has several primitive data types, including numbers, strings, booleans, null, undefined, and symbols. It also has a non-primitive data type called objects. Variables in JavaScript are dynamically typed, which means you don't have to declare the type of a variable before using it. Instead, the type of a variable is inferred based on the value assigned to it.<br />
+
+Objects can inherit properties from each other, thanks to a mechanism called the prototype chain. Every object in JavaScript has a private property that links to exactly one prototype. This differs from class-based inheritance found in many other languages because we're dealing with real objects that take up memory, as opposed to abstract classes in your traditional class-based language.
+
+The prototype chain is essentially a chain of objects, where each object in the chain is linked to its parent object via its prototype property. When you try to access a property on an object, JavaScript first looks for that property on the object itself. If it's not found, it follows the prototype chain upwards until it finds the property or reaches the end of the chain (which is usually the Object.prototype).
+
+This mechanism of inheritance can be quite powerful, as it allows you to create complex object structures that are easy to manage and maintain. However, it's important to use it judiciously, as it can also lead to performance issues if not implemented correctly.
+
+That's all for today's lecture on objects in JavaScript. We hope you found this information helpful, and if you have any questions, please feel free to ask.
 ```
 
 ```
@@ -145,3 +160,5 @@ JavaScript has several built-in data structures, including arrays, sets, and map
 
 ```
 Finally, JavaScript has an interesting feature called the event loop, which allows you to write asynchronous code that runs in a separate thread pool while the rest of the application continues to execute. This is important because modern websites often have multiple things going on at the same time, but they only have access to a single thread for computing called the main thread. Asynchronous code is executed in the background, and its results are later returned to the main thread.<br />
+
+(https://i.ibb.co/MBwPZXb/Event-Loop-browser-V8.png)

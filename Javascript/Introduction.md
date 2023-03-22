@@ -158,4 +158,3 @@ To handle these two possible outcomes, the consumer of the promise can use metho
 However, as the codebase grows in complexity, it becomes challenging to maintain all the code in a single file. This is where modules come in handy. In JavaScript, a module is a file that contains code that can be shared between different files. By default, all the code in a module is private to that file. Still, it's possible to make some code available to other files by exporting it as a default export or a named export.
 
 A default export is a way of exporting a single value from a module. It can be a function or an object, among other things. To use a default export in another file, an import statement can be used. On the other hand, named exports are used to export multiple values from a module.
-

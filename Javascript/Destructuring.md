@@ -1,0 +1,46 @@
+# Destructuring
+
+## Destructuring to access properties
+Different ways to access properties on them. 
+```
+const dog = {
+    name: 'fido',
+    age: 4,
+    bark(){
+        console.log('woof');
+    }
+}
+
+const name = dog.name;
+const age = dog.age;
+
+const {name, age }=dog;
+```
+Sometimes you want the variable name to be different then property name, in that case
+```const { name: fullname, age } = dog;```
+
+## Array Destructuring
+```
+const arr = ['foo', 'bar', 'baz'];
+const [a,b,c] = arr;
+const [,,c] = arr; => const c = arr[2];
+```
+
+## Object destructuring
+const person = {
+  name: 'John',
+  age: 32,
+  city: 'New York',
+  country: 'USA'
+};
+
+const { name, age } = person;
+
+// Object destructuring with alias
+
+const { name: firstName, age: years } = person;
+
+// Array destructuring
+const fruits = ['apple', 'banana', 'orange'];
+const [first, second, third] = fruits;
+```

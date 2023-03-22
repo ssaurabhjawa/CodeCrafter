@@ -129,10 +129,7 @@ const human = {
         console.log('walking)
     }
 }
-
-
-
-
+```
 Objects can inherit properties from each other, thanks to a mechanism called the prototype chain. Every object in JavaScript has a private property that links to exactly one prototype. This differs from class-based inheritance found in many other languages because we're dealing with real objects that take up memory, as opposed to abstract classes in your traditional class-based language.
 
 The prototype chain is essentially a chain of objects, where each object in the chain is linked to its parent object via its prototype property. When you try to access a property on an object, JavaScript first looks for that property on the object itself. If it's not found, it follows the prototype chain upwards until it finds the property or reaches the end of the chain (which is usually the Object.prototype).

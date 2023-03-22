@@ -77,7 +77,6 @@ function giveMeClosure(){
 ```
 
 ## Closures
-
 Now let's talk about closures. A closure is created when a function is defined inside another function, and the inner function has access to the outer function's variables. The inner function "closes over" the outer function's variables and retains access to them even after the outer function has completed execution.
 
 ```
@@ -95,7 +94,7 @@ counter(); // Output: 2
 ```
 In this example, makeCounter creates a closure by returning a function that has access to the count variable. When we call makeCounter, it initializes count to 0 and returns a function that increments count and logs its value to the console. We then assign this returned function to the counter variable, which becomes a closure that has access to count. When we call counter, it increments and logs the value of count. Since counter is a closure, it retains access to count and can continue to increment it each time it's called. <br />
 
-## This
+## This Keyword
 Finally, I want to briefly touch on the this keyword. this is a special keyword in JavaScript that references an object.<br />
 
 Firstly, let's discuss arrow functions. Arrow functions do not have their own this value and they are always anonymous, which makes them ideal for function expressions. This means that when you use an arrow function, it does not create a new this value but instead inherits it from its parent scope. This can be useful in certain situations, and it makes arrow functions quite powerful.
@@ -111,6 +110,7 @@ function person = {
     }
 }
 ```
+## Function Arguments
 Moving on to function arguments, it's important to note that when passing arguments, a primitive value like a number is passed by value. This means that a copy is created of the original variable. However, if the argument is an object, it's stored in the Heap and it's passed by reference. This means that multiple parts of the code might be mutating the same object. It's important to keep this in mind when working with objects in JavaScript.<br />
 ```
 const num = 23;
@@ -136,26 +136,16 @@ The prototype chain is essentially a chain of objects, where each object in the 
 
 This mechanism of inheritance can be quite powerful, as it allows you to create complex object structures that are easy to manage and maintain. However, it's important to use it judiciously, as it can also lead to performance issues if not implemented correctly.
 
-That's all for today's lecture on objects in JavaScript. We hope you found this information helpful, and if you have any questions, please feel free to ask.
-```
-
-```
-
-
-```
-
-
-```
+## Prototype Chain
 JavaScript also has objects, which can contain a collection of key-value pairs or properties and values. Objects can inherit properties from each other thanks to a mechanism called the prototype chain. JavaScript supports object-oriented programming with the class keyword, which is just syntactic sugar for prototypal inheritance and objects.<br />
 ```
 
 
 ```
+## Data Structure
 JavaScript has several built-in data structures, including arrays, sets, and maps. Arrays are used to hold a dynamic collection of indexed items, while sets hold a collection of unique items. Maps are like objects but can be more easily looped over and contain a key-value pair.<br />
-```
 
-
-```
+## Event Loop
 Finally, JavaScript has an interesting feature called the event loop, which allows you to write asynchronous code that runs in a separate thread pool while the rest of the application continues to execute. This is important because modern websites often have multiple things going on at the same time, but they only have access to a single thread for computing called the main thread. Asynchronous code is executed in the background, and its results are later returned to the main thread.<br />
 
 (https://i.ibb.co/MBwPZXb/Event-Loop-browser-V8.png)

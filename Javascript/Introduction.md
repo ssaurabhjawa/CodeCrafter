@@ -149,3 +149,13 @@ JavaScript has several built-in data structures, including arrays, sets, and map
 Finally, JavaScript has an interesting feature called the event loop, which allows you to write asynchronous code that runs in a separate thread pool while the rest of the application continues to execute. This is important because modern websites often have multiple things going on at the same time, but they only have access to a single thread for computing called the main thread. Asynchronous code is executed in the background, and its results are later returned to the main thread.<br />
 
 ![event loop](https://i.ibb.co/MBwPZXb/Event-Loop-browser-V8.png)
+
+```setTimeOut()
+A promise is an essential concept in JavaScript that provides a way to handle asynchronous operations. In simple terms, a promise is a wrapper for a value that is currently unknown but will resolve to a value in the future. For instance, a promise can be used to make a call to a third-party API that will eventually return some data. If something goes wrong in this process, the promise can reject and raise an error.
+
+To handle these two possible outcomes, the consumer of the promise can use methods like then() and catch(). Alternatively, an async function can be defined to automatically return a promise. The body of the function can then use the await keyword to pause its execution and wait for other promises to resolve. This results in readable code that is easier to understand.
+
+However, as the codebase grows in complexity, it becomes challenging to maintain all the code in a single file. This is where modules come in handy. In JavaScript, a module is a file that contains code that can be shared between different files. By default, all the code in a module is private to that file. Still, it's possible to make some code available to other files by exporting it as a default export or a named export.
+
+A default export is a way of exporting a single value from a module. It can be a function or an object, among other things. To use a default export in another file, an import statement can be used. On the other hand, named exports are used to export multiple values from a module.
+

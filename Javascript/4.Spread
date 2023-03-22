@@ -1,0 +1,25 @@
+# Spread
+
+## How to combine two objects or arrays
+The two object here share the property of 'third', 
+**Goal:** Combine two object into a new object 
+```
+const obj1 = {
+    first: 'a',
+    second: 'b',
+    third: 'c',
+}
+
+const obj2={
+    third:'d',
+    fourth:'e',
+    ...obj1,
+}
+
+```const full = Object.assign({},obj1,obj2)```
+
+**Introducing Spread Operator**
+We start with an object literal
+const full = {...obj1, ...obj2};
+
+## object literal

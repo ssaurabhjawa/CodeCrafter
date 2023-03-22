@@ -27,6 +27,7 @@ const [,,c] = arr; => const c = arr[2];
 ```
 
 ## Object destructuring
+```
 const person = {
   name: 'John',
   age: 32,

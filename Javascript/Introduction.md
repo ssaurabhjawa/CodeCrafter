@@ -110,7 +110,7 @@ function person = {
         console.log(this);
     }
 }
-
+```
 Moving on to function arguments, it's important to note that when passing arguments, a primitive value like a number is passed by value. This means that a copy is created of the original variable. However, if the argument is an object, it's stored in the Heap and it's passed by reference. This means that multiple parts of the code might be mutating the same object. It's important to keep this in mind when working with objects in JavaScript.<br />
 ```
 const num = 23;
@@ -120,7 +120,7 @@ someFun(num, obj);
 ```
 
 Speaking of which, let's dive into objects. The easiest way to define an object is with the object literal syntax using braces. However, there's also an object type that can be created with a constructor using the new keyword. An object contains a collection of properties, each of which has a name and a value. These values can be anything from primitive data types to other objects or even functions.
-
+```
 const human = {
     dna: 'AACTG',
     name: 'Jeff',

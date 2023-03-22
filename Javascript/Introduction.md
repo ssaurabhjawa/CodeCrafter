@@ -2,11 +2,12 @@
 ## Variables
 
 ### Let 
-There are several different ways to define variables, the most common of which today is let. We start by giving it a name, which will normally be in camelcase, then assign a value to it.```
+There are several different ways to define variables, the most common of which today is let. We start by giving it a name, which will normally be in camelcase, then assign a value to it.<br />
+```
 let luckyNum = 23;
 ```
  It's a dynamically typed language, which means no data type annotations are necessary. In this case, we've assigned a number, which is one of the seven primitive data types built into the language. However, we don't need to assign the variable a value right now because it can be reassigned later. Without an assignment, it automatically uses the primitive value of undefined as its default value. However, we can explicitly represent an empty value using null, and later on, we could reassign that same variable to a string. It's an entirely different data type, but that's perfectly okay.<br />
-Seven Primitive Data Types <br />
+## Seven Primitive Data Types
 * String
 * number
 * bigint
@@ -14,7 +15,6 @@ Seven Primitive Data Types <br />
 * undefined
 * symbol
 * null
-<br />
 
 Now, any value that's not a primitive will inherit from the object class, but more on that later. Right now, we need to talk about the semicolon. Technically, semicolons are optional because if you leave them out, the JavaScript parser will add them automatically. In real life, JavaScript developers will often fight to the death over whether or not to use semicolons.<br />
 ```

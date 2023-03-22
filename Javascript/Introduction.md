@@ -148,4 +148,4 @@ JavaScript has several built-in data structures, including arrays, sets, and map
 ## Event Loop
 Finally, JavaScript has an interesting feature called the event loop, which allows you to write asynchronous code that runs in a separate thread pool while the rest of the application continues to execute. This is important because modern websites often have multiple things going on at the same time, but they only have access to a single thread for computing called the main thread. Asynchronous code is executed in the background, and its results are later returned to the main thread.<br />
 
-(https://i.ibb.co/MBwPZXb/Event-Loop-browser-V8.png)
+[event loop](https://i.ibb.co/MBwPZXb/Event-Loop-browser-V8.png)

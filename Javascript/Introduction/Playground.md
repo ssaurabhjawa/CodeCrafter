@@ -43,3 +43,7 @@ External JavaScript: External JavaScript is code that is stored in a separate fi
   <h1 onclick="sayHello()">Click me!</h1>
 </body>
 </html>
+
+Run the JavaScript file using Node.js: To run the JavaScript file using Node.js, you can use the command line interface (CLI). Open the CLI and navigate to the directory where your JavaScript file is saved. Then, type the following command:
+
+node app.js

@@ -29,3 +29,31 @@ In JavaScript, there are several types of built-in functions that developers can
 -   `getMonth()`: Returns the month (0-11) for a given date object.
 
 These are just some examples of the types of built-in functions in JavaScript. There are many other types of functions, such as object functions, regular expression functions, and more, that can be used to perform a wide range of tasks in JavaScript.
+
+
+Demonstrate navigate.vibrate()
+window.scrollTo(1,1000)
+
+# Custom Functions
+## Calculate Bill Application
+
+
+calBill.js
+```js
+// Function Defination
+function calculateBill(){
+    // this is the function block/body
+    const total = 100 * 1.18;
+    console.log(total);
+    // How do I store the result of function in a variable 
+    return total;
+}
+// function call or **Run**
+calculateBill()
+console.log(total)
+const myTotal = calculateBill();
+console.log(`Your Total is $${myTotal}`)
+// 'Total' variable is a temporary variable inside the function 'calculateBill'. To capture the value of 'Total' Variable you have to stick in a variable
+`$${}` - interpolation String
+```
+

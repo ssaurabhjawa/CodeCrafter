@@ -61,4 +61,4 @@ console.log(`Your Total is $${myTotal}`)
 It is not good to reach outside the scope of function to get data
 Parameters - Placeholder
 Arguments - 
-![functionsAnatomy](../../Assets/images/functions.pngAssets/images/functions.png)
+![functionsAnatomy](https://github.com/ssaurabhjawa/CodeCrafter/blob/main/Assets/images/functions.png?raw=true)

@@ -58,7 +58,5 @@ console.log(`Your Total is $${myTotal}`)
 ```
 
 # Parameters & Arguments
-It is not good to reach outside the scope of function to get data
-Parameters - Placeholder
-Arguments - 
 ![functionsAnatomy](https://github.com/ssaurabhjawa/CodeCrafter/blob/main/Assets/images/functions.png?raw=true)
+

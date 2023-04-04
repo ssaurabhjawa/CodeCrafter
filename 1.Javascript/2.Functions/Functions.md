@@ -57,3 +57,8 @@ console.log(`Your Total is $${myTotal}`)
 `$${}` - interpolation String
 ```
 
+# Parameters & Arguments
+It is not good to reach outside the scope of function to get data
+Parameters - Placeholder
+Arguments - 
+![]
